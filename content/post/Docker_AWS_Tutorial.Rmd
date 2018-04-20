@@ -45,7 +45,7 @@ Here we will begin by creating a machine using AWS.
 AWS has a number of instance-type options for a variety of situations. As of October 26, 2016,
 here are the instance types and their respective price per hour.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 instanceTypes <- fread("instanceTypes.csv", showProgress = FALSE)
 kable(instanceTypes)
 ```
