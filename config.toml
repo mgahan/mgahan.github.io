@@ -1,5 +1,5 @@
-baseurl = "https://example.com/"
-title = "Bootstrap demo"
+baseurl = "https://mgahan.netlify.com/"
+title = "Bloggin"
 languageCode = "en-us"
 
 # Pagination
@@ -62,7 +62,7 @@ defaultContentLanguage = "en"
   mainSections = ["post"]
 
   # Default author
-  author = "John Doe"
+  author = "Mike Gahan"
 
   # Date format (default: Jan 2, 2006)
   # date_format = "Jan 2, 2006"
