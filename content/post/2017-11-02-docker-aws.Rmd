@@ -1,0 +1,330 @@
+---
+title: Docker AWS
+author: Mike Gahan
+date: '2017-11-02'
+slug: docker-aws
+categories:
+  - R
+tags:
+  - R
+  - AWS
+  - Docker
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(data.table)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+## If you would like to follow along:
+
+This tutorial assumes the user has already downloaded and installed the following:
+
+- Docker
+	- Mac OSX: https://docs.docker.com/docker-for-mac/
+	- Windows: https://docs.docker.com/engine/installation/windows/
+- AWS Command Line Interface (CLI)
+	- https://aws.amazon.com/cli/
+
+## Why docker is useful?
+
+- No worries about missing dependencies, packages, and other pain points during
+subsequent deployments
+
+- Reduce/eliminate concerns about compatibility on different platforms. This has the potential
+to eliminate much of our Windows/Mac issues.
+
+- Allows access to a VM without all the overhead of a VM
+
+- Allows us to quickly scale an environment through AWS or other cloud platform
+quickly and without pain
+
+## Creating docker machine
+
+A nice feature to docker is that is can be run to setup on new environment on your
+local machine, or it can also be used to create a new machine via the AWS driver
+(or any other of the available drivers such as Google, Microsoft Azure, Digital Ocean,
+Rackspace, etc.).
+
+Here we will begin by creating a machine using AWS.
+AWS has a number of instance-type options for a variety of situations. As of October 26, 2016,
+here are the instance types and their respective price per hour.
+
+```{r, echo=FALSE, eval=FALSE}
+instanceTypes <- fread("instanceTypes.csv", showProgress = FALSE)
+kable(instanceTypes)
+```
+
+A more up to date view of this can be at the link below:
+
+https://aws.amazon.com/ec2/pricing/on-demand/
+
+Now we can build a machine using docker. Key parameters we need to input:
+
+- **Access Key** - security access key. Ask admins for this if not available.
+- **Secret Key** - security secret key. Again, ask admins for this if not available.
+- **Region** - default aws region associated with access and secret key
+- **Root Size** - size in gigabytes of drive space. For RStudio instances, it is nice
+to have 15-20 GBs and more if you are processing lots of data
+- **Instance Type** - type of instance desired
+- **Security Group** - optional input. For the modeling team, the docker-machine-ips
+only allows access from certain IP addresses. Here is an example of how to open we might
+want to open ports:
+
+```
+The following ports must be open in the AWS security group
+Type	        Protocol	Port Range		Source
+HTTP	        TCP  	        80        0.0.0.0/0  
+SSH             TCP             22        0.0.0.0/0
+Custom TCP Rule TCP           2376        0.0.0.0/0
+Custom TCP Rule TCP           8787        0.0.0.0/0
+Custom TCP Rule TCP           3838        0.0.0.0/0
+```
+
+There is more detail on these parameters at the following link:
+https://docs.docker.com/machine/drivers/aws/
+
+Creating the machine can take a couple of minutes to build the environment, certificates,
+and SSH keys.
+
+```{sh, eval=FALSE}
+name=Mike
+echo $name
+
+docker-machine create --driver amazonec2 \
+--amazonec2-access-key A******************** \
+--amazonec2-secret-key ********************* \
+--amazonec2-region us-west-2 \
+--amazonec2-root-size 20 \
+--amazonec2-instance-type t2.micro \
+ awsRStudio$name
+```
+
+Note: You can also provide a security group to the following command (e.g):
+
+```{sh, eval=FALSE}
+--amazonec2-security-group docker-machine-ips \
+```
+
+```
+Running pre-create checks...
+Creating machine...
+(awsRStudio) Launching instance...
+Waiting for machine to be running, this may take a few minutes...
+Detecting operating system of created instance...
+Waiting for SSH to be available...
+Detecting the provisioner...
+Provisioning with ubuntu(systemd)...
+Installing Docker...
+Copying certs to the local machine directory...
+Copying certs to the remote machine...
+Setting Docker configuration on the remote daemon...
+Checking connection to Docker...
+Docker is up and running!
+To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env awsRStudio
+```
+
+## Activate new docker machine
+
+Now we have created a new machine, but this does not mean that we this is the current
+active machine. Let's list the docker machines available to us.
+
+```{sh, eval=FALSE}
+docker-machine ls
+```
+
+```
+NAME         ACTIVE   DRIVER       STATE     URL                        SWARM   DOCKER    ERRORS
+awsRStudio   -        amazonec2    Running   tcp://35.161.235.82:2376           v1.12.2   
+default      -        virtualbox   Stopped                                      Unknown  
+```
+
+The `ACTIVE` column puts a `*` next to the active machine. The new machine we have created
+is not currently the active machine. We should make it the active machine.
+
+```{sh, eval=FALSE}
+eval $(docker-machine env awsRStudio$name)
+```
+
+So now we have an activated machine! We should soon be able to run our code but we will
+need an image to work off first.
+
+```
+NAME         ACTIVE   DRIVER       STATE     URL                        SWARM   DOCKER    ERRORS
+awsRStudio   *        amazonec2    Running   tcp://35.161.235.82:2376           v1.12.2   
+default      -        virtualbox   Stopped                                      Unknown  
+```
+
+
+## Pull Image from Repository
+
+In order to eventually run code in our docker containers, we need to pull or create
+an image that will eventually spawn a container. There are a couple of different images
+we can pull.
+
+1. Modeling team RStudio/Shiny Image
+	- this image comes complete with a RStudio-server and a Shiny server as well as all
+	AWS profiles and individual modeling team member profiles
+	
+2. Generic docker hub RStudio image
+	- comes with RStudio-server and common R packages
+	- only comes with rstudio profile (username: rstudio, password: rstudio)
+	
+
+In order to grab the first image, try the following code. This code is used
+to login to the AWS container:
+
+```{sh, eval=FALSE}
+eval $(aws ecr --profile metabiota_internal get-login --region us-west-2)
+```
+
+```
+Flag --email has been deprecated, will be removed in 1.13.
+Login Succeeded
+```
+
+If that didn't work, that is okay. We can get you setup later. For the time being we will
+grab the generic RStudio-Server image from docker hub.
+
+1. Pull Modeling team RStudio/Shiny Image
+
+```{sh, eval=FALSE}
+docker pull 277815483075.dkr.ecr.us-west-2.amazonaws.com/metabiota/rstudio:latest
+```
+
+2. or Pull Generic RStudio-Server image
+
+```{sh, eval=FALSE}
+docker pull rocker/rstudio
+```
+
+The image can take anywhere from a few seconds to a few minutes to download and then extract
+sections of the image.
+
+## Create container from image
+
+In docker lingo, an image does not actually run code, rather containers do. Images
+are immutable meaning they can't be altered unless they are rebuilt. We have
+already downloaded an image but we have not yet built a container. We can
+build containers from an image using `docker run`.
+
+Buiding the container depends on the image you pulled in the previous step.
+
+1. Build container from Modeling team RStudio/Shiny Image
+
+```{sh, eval=FALSE}
+docker run -d -p 8787:8787 -p 3838:3838 --name rstudio_test --shm-size=1g 277815483075.dkr.ecr.us-west-2.amazonaws.com/metabiota/rstudio:latest
+```
+
+2. or Build container from Generic RStudio-Server Image
+
+```{sh, eval=FALSE}
+docker run -d -p 8787:8787 --name rstudio_test --shm-size=1g rocker/rstudio:latest
+```
+
+There is a lot here! We can go ahead each flag independently.
+
+- **-d detached** This runs the container in detached mode (in the background). 
+Very desireable for apps like RStudio-Server or Shiny-Server that run through ports that
+can be access through a browser.
+
+- **-p port** What ports should be opened and where should they be mapped? RStudio-Server
+defaults to being mapped through port 8787. If we wanted to view RStudio through port
+8788, we would change this to 8787:8788.
+
+- **--name name** What is the name of the container? If container is not named,
+docker assigns a name based on a random adjective and scientist (e.g. *drunk_einstein*)
+
+- **--shm-size shared memory** I think this is especially an important flag for
+the modeling team since we read files into R using the aws cli. That process is
+technically sharing memory from R to the system calls. I usually max this out at the amount
+of memory available.
+
+## Naviage to RStudio-Server
+
+In order to actually navigate to our newly built RStudio-Server, we need to find the
+IP where the container is running. First, let's make sure our container is up and running.
+
+```{sh, eval=FALSE}
+docker ps
+```
+
+```
+CONTAINER ID        IMAGE                                                                   COMMAND             CREATED             STATUS              PORTS                                            NAMES
+f00fa3ff2d64        277815483075.dkr.ecr.us-west-2.amazonaws.com/metabiota/rstudio:latest   "/init"             11 seconds ago      Up 10 seconds       0.0.0.0:3838->3838/tcp, 0.0.0.0:8787->8787/tcp   rstudio_test
+```
+
+So the container is up and runnign on port 8787 on the local host of the new machine that has been
+built. We can retrieve the IP of that machine using the `docker-machine ls` command.
+
+```{sh, eval=FALSE}
+docker-machine ls
+```
+
+```
+NAME         ACTIVE   DRIVER       STATE     URL                        SWARM   DOCKER    ERRORS
+awsRStudio   *        amazonec2    Running   tcp://35.161.66.147:2376           v1.12.2   
+default      -        virtualbox   Stopped                                      Unknown 
+```
+
+This implies that we can navigate to the following address and we should see
+the RStudio-Server login page:
+
+http://35.161.66.147:8787/auth-sign-in
+
+Your IP address will be different.
+
+## SSH'ing into container via terminal
+
+Sometimes it is important to be able to SSH into the container via the terminal.
+This is easier to do through the `docker exec` command.
+
+```{sh, eval=FALSE}
+docker exec -it rstudio_test /bin/bash
+```
+
+The flag **-it** represents interactive and through the terminal.
+
+The result is that you are logged into the terminal as `root`.
+
+```
+root@f00fa3ff2d64:~# 
+```
+
+To exit the terminal, simply type `exit` and you will return to your local session.
+
+## Deleting containers, images, machines
+
+Once you are finished with the machine, you might want to clean up and shut everything down.
+This is especially true if you are using an AWS instance and paying by the hour. Not all of
+the following steps are necessary but they are shown for reference.
+
+### Delete Container
+
+```{sh, eval=FALSE}
+docker kill rstudio_test
+docker rm rstudio_test
+```
+
+### Delete Image
+
+```{sh, eval=FALSE}
+docker rmi 277815483075.dkr.ecr.us-west-2.amazonaws.com/metabiota/rstudio:latest
+
+or
+
+docker rmi rocker/rstudio::latest
+```
+
+### Delete Machine
+
+```{sh, eval=FALSE}
+docker-machine rm -f awsRStudio
+```
+
+And just to double check, you can login into the AWS account to confirm that the instance
+has been deleted.
+
+https://us-west-2.console.aws.amazon.com
