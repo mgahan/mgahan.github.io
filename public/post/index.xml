@@ -79,5 +79,17 @@ Follow the following steps:
  Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/1/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/1/01/</guid>
+      <description>title: “Docker AWS” author: “Mike Gahan” date: 2016-11-02T21:13:14-05:00 categories: [“R”] tags: [“AWS”, “Docker”]
+If you would like to follow along: This tutorial assumes the user has already downloaded and installed the following:
+ Docker  Mac OSX: https://docs.docker.com/docker-for-mac/ Windows: https://docs.docker.com/engine/installation/windows/  AWS Command Line Interface (CLI)  https://aws.amazon.com/cli/    Why docker is useful?  No worries about missing dependencies, packages, and other pain points during subsequent deployments
+ Reduce/eliminate concerns about compatibility on different platforms.</description>
+    </item>
+    
   </channel>
 </rss>
