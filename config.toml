@@ -1,6 +1,5 @@
 baseurl = "https://mgahan.netlify.com/"
 title = "Bloggin"
-languageCode = "en-us"
 
 # Pagination
 paginate = 3
@@ -16,41 +15,18 @@ theme = "hugo-bootstrap"
 # Google analytics
 googleAnalytics = "UA-47268287-3"
 
-# Languages
-
-defaultContentLanguage = "en"
-
-[languages.en]
-  languageName = "English"
-
-  [[languages.en.menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
-  [[languages.en.menu.main]]
-    url = "/about/"
-    name = "About"
-    weight = 2
-  [[languages.en.menu.main]]
-    url = "/contact/"
-    name = "Contact"
-    weight = 3
-
-[languages.es]
-  languageName = "Español"
-
-  [[languages.es.menu.main]]
-    url = "/es/"
-    name = "Casa"
-    weight = 1
-  [[languages.es.menu.main]]
-    url = "/about/"
-    name = "Acerca de"
-    weight = 2
-  [[languages.es.menu.main]]
-    url = "/contact/"
-    name = "Contacto"
-    weight = 3
+[[menu.main]]
+  url = "/"
+  name = "Home"
+  weight = 1
+[[menu.main]]
+  url = "/about/"
+  name = "About"
+  weight = 2
+[[menu.main]]
+  url = "/contact/"
+  name = "Contact"
+  weight = 3
 
 # Links format
 
