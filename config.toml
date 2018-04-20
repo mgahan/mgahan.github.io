@@ -1,7 +1,6 @@
-baseurl = "https://mgahan.github.io/"
+baseurl = "https://example.com/"
 title = "Bootstrap demo"
 languageCode = "en-us"
-publishDir: "../username.github.io"
 
 # Pagination
 paginate = 3
