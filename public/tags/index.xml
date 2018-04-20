@@ -5,10 +5,19 @@
     <link>/tags/</link>
     <description>Recent content in Tags on Bloggin</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 05 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Nov 2016 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aws</title>
+      <link>/tags/aws/</link>
+      <pubDate>Wed, 02 Nov 2016 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/aws/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Demo</title>
@@ -25,6 +34,15 @@
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
       <guid>/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Wed, 02 Nov 2016 21:13:14 -0500</pubDate>
+      
+      <guid>/tags/docker/</guid>
       <description></description>
     </item>
     

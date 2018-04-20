@@ -1,8 +1,10 @@
+---
 title: "Docker AWS"
 author: "Mike Gahan"
 date: 2016-11-02T21:13:14-05:00
 categories: ["R"]
 tags: ["AWS", "Docker"]
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(collapse = TRUE)

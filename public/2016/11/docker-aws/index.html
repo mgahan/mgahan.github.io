@@ -1,14 +1,138 @@
----
-title: "Docker AWS"
-author: "Mike Gahan"
-date: 2016-11-02T21:13:14-05:00
-categories: ["R"]
-tags: ["AWS", "Docker"]
----
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Docker AWS" />
+<meta property="og:description" content="If you would like to follow along: This tutorial assumes the user has already downloaded and installed the following:
+ Docker  Mac OSX: https://docs.docker.com/docker-for-mac/ Windows: https://docs.docker.com/engine/installation/windows/  AWS Command Line Interface (CLI)  https://aws.amazon.com/cli/    Why docker is useful?  No worries about missing dependencies, packages, and other pain points during subsequent deployments
+ Reduce/eliminate concerns about compatibility on different platforms. This has the potential to eliminate much of our Windows/Mac issues." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/2016/11/docker-aws/" />
 
 
 
-<div id="if-you-would-like-to-follow-along" class="section level1">
+<meta property="article:published_time" content="2016-11-02T21:13:14-05:00"/>
+
+<meta property="article:modified_time" content="2016-11-02T21:13:14-05:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Docker AWS"/>
+<meta name="twitter:description" content="If you would like to follow along: This tutorial assumes the user has already downloaded and installed the following:
+ Docker  Mac OSX: https://docs.docker.com/docker-for-mac/ Windows: https://docs.docker.com/engine/installation/windows/  AWS Command Line Interface (CLI)  https://aws.amazon.com/cli/    Why docker is useful?  No worries about missing dependencies, packages, and other pain points during subsequent deployments
+ Reduce/eliminate concerns about compatibility on different platforms. This has the potential to eliminate much of our Windows/Mac issues."/>
+
+
+    <link rel="canonical" href="/2016/11/docker-aws/">
+
+    <title>
+      
+        Docker AWS | Bloggin
+      
+    </title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="/css/style.css" rel="stylesheet">
+
+    
+
+    
+
+    
+  </head>
+  <body>
+    
+      <header class="blog-header">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand" href="/">
+            <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top"
+    alt="">
+Bloggin
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <ul class="navbar-nav">
+                
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/about/">About</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/contact/">Contact</a>
+                </li>
+                
+            </ul>
+            
+        </div>
+    </nav>
+</header>
+    
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8 blog-main">
+
+          
+
+<article class="blog-post">
+    <header>
+        <h2 class="blog-post-title">
+            <a class="text-dark" href="/2016/11/docker-aws/">Docker AWS</a>
+        </h2>
+        
+
+
+<div class="blog-post-date text-secondary">
+    
+        Nov 2, 2016
+    
+    
+        by Mike Gahan
+    
+</div>
+        
+<div class="blog-post-tags text-secondary">
+    <strong>Tags:</strong>
+    
+        <a class="badge badge-primary" href="/tags/aws">AWS</a>
+    
+        <a class="badge badge-primary" href="/tags/docker">Docker</a>
+    
+</div>
+
+        
+<div class="blog-post-categories text-secondary">
+    <strong>Categories:</strong>
+    
+        <a class="badge badge-primary" href="/categories/r">R</a>
+    
+</div>
+
+    </header>
+    <hr>
+    <div id="if-you-would-like-to-follow-along" class="section level1">
 <h1>If you would like to follow along:</h1>
 <p>This tutorial assumes the user has already downloaded and installed the following:</p>
 <ul>
@@ -194,3 +318,122 @@ docker rmi rocker/rstudio::latest</code></pre>
 <p>And just to double check, you can login into the AWS account to confirm that the instance has been deleted.</p>
 <p><a href="https://us-west-2.console.aws.amazon.com" class="uri">https://us-west-2.console.aws.amazon.com</a></p>
 </div>
+
+
+    
+
+    
+
+
+</article>
+
+
+
+        </div>
+
+        <aside class="col-12 col-lg-3 ml-auto blog-sidebar">
+    
+        
+
+
+<section>
+    <h4>Recent Posts</h4>
+    <ol class="list-unstyled">
+        
+        <li>
+            <a href="/2014/09/creating-a-new-theme/">Creating a New Theme</a>
+        </li>
+        
+        <li>
+            <a href="/2014/03/migrate-to-hugo-from-jekyll/">Migrate to Hugo from Jekyll</a>
+        </li>
+        
+        <li>
+            <a href="/2016/11/docker-aws/">Docker AWS</a>
+        </li>
+        
+        <li>
+            <a href="/2015/07/hello-r-markdown/">Hello R Markdown</a>
+        </li>
+        
+        <li>
+            <a href="/2015/01/first-post/">First post!</a>
+        </li>
+        
+    </ol>
+</section>
+
+    
+    
+        <section>
+    
+        
+    
+        
+        <h4>Categories</h4>
+        <p>
+            
+            <a class="badge badge-primary" href="/categories/development">development</a>
+            
+            <a class="badge badge-primary" href="/categories/golang">golang</a>
+            
+            <a class="badge badge-primary" href="/categories/r">r</a>
+            
+        </p>
+        
+    
+        
+        <h4>Tags</h4>
+        <p>
+            
+            <a class="badge badge-primary" href="/tags/aws">aws</a>
+            
+            <a class="badge badge-primary" href="/tags/demo">demo</a>
+            
+            <a class="badge badge-primary" href="/tags/development">development</a>
+            
+            <a class="badge badge-primary" href="/tags/docker">docker</a>
+            
+            <a class="badge badge-primary" href="/tags/go">go</a>
+            
+            <a class="badge badge-primary" href="/tags/golang">golang</a>
+            
+            <a class="badge badge-primary" href="/tags/hugo">hugo</a>
+            
+            <a class="badge badge-primary" href="/tags/plot">plot</a>
+            
+            <a class="badge badge-primary" href="/tags/r-markdown">r-markdown</a>
+            
+            <a class="badge badge-primary" href="/tags/regression">regression</a>
+            
+            <a class="badge badge-primary" href="/tags/templates">templates</a>
+            
+            <a class="badge badge-primary" href="/tags/themes">themes</a>
+            
+        </p>
+        
+    
+</section>
+    
+</aside>
+
+      </div>
+    </div>
+    
+
+    
+      <footer class="blog-footer w-100">
+    <nav class="navbar navbar-light bg-light">
+        <p class="w-100 text-center">Hugo template made with ❤</p>
+        <p class="w-100 text-center"><a href="#">Back to top</a></p>
+    </nav>
+</footer>
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
