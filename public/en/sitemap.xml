@@ -3,361 +3,361 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2014/09/creating-a-new-theme/</loc>
+    <loc>https://mgahan.github.io/2014/09/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2014/03/migrate-to-hugo-from-jekyll/</loc>
+    <loc>https://mgahan.github.io/2014/03/migrate-to-hugo-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2016/12/a-plain-markdown-post/</loc>
+    <loc>https://mgahan.github.io/2016/12/a-plain-markdown-post/</loc>
     <lastmod>2016-12-30T21:49:57-07:00</lastmod>
   </url>
   
   <url>
-    <loc>/2015/07/hello-r-markdown/</loc>
+    <loc>https://mgahan.github.io/2015/07/hello-r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/2015/01/first-post/</loc>
+    <loc>https://mgahan.github.io/2015/01/first-post/</loc>
     <lastmod>2015-01-05T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/2015/01/primer-comentario/"
+                href="https://mgahan.github.io/es/2015/01/primer-comentario/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2015/01/first-post/"
+                href="https://mgahan.github.io/2015/01/first-post/"
                 />
   </url>
   
   <url>
-    <loc>/2015/01/lorem-ipsum/</loc>
+    <loc>https://mgahan.github.io/2015/01/lorem-ipsum/</loc>
     <lastmod>2015-01-01T13:09:13-06:00</lastmod>
   </url>
   
   <url>
-    <loc>/2014/04/hugo-template-primer/</loc>
+    <loc>https://mgahan.github.io/2014/04/hugo-template-primer/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/2014/04/hugo-template-primer/"
+                href="https://mgahan.github.io/es/2014/04/hugo-template-primer/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2014/04/hugo-template-primer/"
+                href="https://mgahan.github.io/2014/04/hugo-template-primer/"
                 />
   </url>
   
   <url>
-    <loc>/2014/04/getting-started-with-hugo/</loc>
+    <loc>https://mgahan.github.io/2014/04/getting-started-with-hugo/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/2014/04/getting-started-with-hugo/"
+                href="https://mgahan.github.io/es/2014/04/getting-started-with-hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/2014/04/getting-started-with-hugo/"
+                href="https://mgahan.github.io/2014/04/getting-started-with-hugo/"
                 />
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://mgahan.github.io/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/about/"
+                href="https://mgahan.github.io/es/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/about/"
+                href="https://mgahan.github.io/about/"
                 />
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://mgahan.github.io/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/"
+                href="https://mgahan.github.io/es/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/"
+                href="https://mgahan.github.io/"
                 />
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://mgahan.github.io/categories/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/categories/"
+                href="https://mgahan.github.io/es/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/"
+                href="https://mgahan.github.io/categories/"
                 />
   </url>
   
   <url>
-    <loc>/contact/</loc>
+    <loc>https://mgahan.github.io/contact/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/contact/"
+                href="https://mgahan.github.io/es/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/contact/"
+                href="https://mgahan.github.io/contact/"
                 />
   </url>
   
   <url>
-    <loc>/tags/demo/</loc>
+    <loc>https://mgahan.github.io/tags/demo/</loc>
     <lastmod>2015-01-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/demo/"
+                href="https://mgahan.github.io/es/tags/demo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/demo/"
+                href="https://mgahan.github.io/tags/demo/"
                 />
   </url>
   
   <url>
-    <loc>/tags/development/</loc>
+    <loc>https://mgahan.github.io/categories/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/development/"
+                href="https://mgahan.github.io/es/categories/development/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/development/"
+                href="https://mgahan.github.io/categories/development/"
                 />
   </url>
   
   <url>
-    <loc>/categories/development/</loc>
+    <loc>https://mgahan.github.io/tags/development/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/categories/development/"
+                href="https://mgahan.github.io/es/tags/development/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/development/"
+                href="https://mgahan.github.io/tags/development/"
                 />
   </url>
   
   <url>
-    <loc>/en/</loc>
+    <loc>https://mgahan.github.io/en/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/en/"
+                href="https://mgahan.github.io/es/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="https://mgahan.github.io/en/"
                 />
   </url>
   
   <url>
-    <loc>/tags/go/</loc>
+    <loc>https://mgahan.github.io/tags/go/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/go/"
+                href="https://mgahan.github.io/es/tags/go/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/go/"
+                href="https://mgahan.github.io/tags/go/"
                 />
   </url>
   
   <url>
-    <loc>/tags/golang/</loc>
+    <loc>https://mgahan.github.io/categories/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/golang/"
+                href="https://mgahan.github.io/es/categories/golang/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/golang/"
+                href="https://mgahan.github.io/categories/golang/"
                 />
   </url>
   
   <url>
-    <loc>/categories/golang/</loc>
+    <loc>https://mgahan.github.io/tags/golang/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/categories/golang/"
+                href="https://mgahan.github.io/es/tags/golang/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/categories/golang/"
+                href="https://mgahan.github.io/tags/golang/"
                 />
   </url>
   
   <url>
-    <loc>/tags/hugo/</loc>
+    <loc>https://mgahan.github.io/tags/hugo/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/hugo/"
+                href="https://mgahan.github.io/es/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/hugo/"
+                href="https://mgahan.github.io/tags/hugo/"
                 />
   </url>
   
   <url>
-    <loc>/tags/plot/</loc>
+    <loc>https://mgahan.github.io/tags/plot/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://mgahan.github.io/post/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/post/"
+                href="https://mgahan.github.io/es/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/post/"
+                href="https://mgahan.github.io/post/"
                 />
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
+    <loc>https://mgahan.github.io/categories/r/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/r-markdown/</loc>
+    <loc>https://mgahan.github.io/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/regression/</loc>
+    <loc>https://mgahan.github.io/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://mgahan.github.io/tags/</loc>
     <lastmod>2015-01-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/"
+                href="https://mgahan.github.io/es/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/"
+                href="https://mgahan.github.io/tags/"
                 />
   </url>
   
   <url>
-    <loc>/tags/templates/</loc>
+    <loc>https://mgahan.github.io/tags/templates/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/templates/"
+                href="https://mgahan.github.io/es/tags/templates/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/templates/"
+                href="https://mgahan.github.io/tags/templates/"
                 />
   </url>
   
   <url>
-    <loc>/tags/themes/</loc>
+    <loc>https://mgahan.github.io/tags/themes/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/tags/themes/"
+                href="https://mgahan.github.io/es/tags/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/tags/themes/"
+                href="https://mgahan.github.io/tags/themes/"
                 />
   </url>
   
   <url>
-    <loc>/ua-47268287-3/</loc>
+    <loc>https://mgahan.github.io/ua-47268287-3/</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="es"
-                href="/es/ua-47268287-3/"
+                href="https://mgahan.github.io/es/ua-47268287-3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/ua-47268287-3/"
+                href="https://mgahan.github.io/ua-47268287-3/"
                 />
   </url>
   
