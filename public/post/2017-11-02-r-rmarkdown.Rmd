@@ -1,19 +1,19 @@
 ---
-title: "Docker AWS Tutorial"
+title: "Docker AWS"
 author: "Mike Gahan"
-date: 2016-11-02
-categories: ["R"]
-tags: ["R","AWS","Docker"]
+date: '2016-11-02T21:13:14-05:00'
+tags:
+- R Markdown
+- plot
+- regression
+categories: R
 ---
 
 ```{r setup, include=FALSE}
-library(knitr)
-library(data.table)
-knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-## If you would like to follow along:
+# If you would like to follow along:
 
 This tutorial assumes the user has already downloaded and installed the following:
 
@@ -23,7 +23,7 @@ This tutorial assumes the user has already downloaded and installed the followin
 - AWS Command Line Interface (CLI)
 	- https://aws.amazon.com/cli/
 
-## Why docker is useful?
+# Why docker is useful?
 
 - No worries about missing dependencies, packages, and other pain points during
 subsequent deployments
@@ -36,7 +36,7 @@ to eliminate much of our Windows/Mac issues.
 - Allows us to quickly scale an environment through AWS or other cloud platform
 quickly and without pain
 
-## Creating docker machine
+# Creating docker machine
 
 A nice feature to docker is that is can be run to setup on new environment on your
 local machine, or it can also be used to create a new machine via the AWS driver
@@ -121,7 +121,7 @@ Docker is up and running!
 To see how to connect your Docker Client to the Docker Engine running on this virtual machine, run: docker-machine env awsRStudio
 ```
 
-## Activate new docker machine
+# Activate new docker machine
 
 Now we have created a new machine, but this does not mean that we this is the current
 active machine. Let's list the docker machines available to us.
@@ -153,7 +153,7 @@ default      -        virtualbox   Stopped                                      
 ```
 
 
-## Pull Image from Repository
+# Pull Image from Repository
 
 In order to eventually run code in our docker containers, we need to pull or create
 an image that will eventually spawn a container. There are a couple of different images
@@ -198,7 +198,7 @@ docker pull rocker/rstudio
 The image can take anywhere from a few seconds to a few minutes to download and then extract
 sections of the image.
 
-## Create container from image
+# Create container from image
 
 In docker lingo, an image does not actually run code, rather containers do. Images
 are immutable meaning they can't be altered unless they are rebuilt. We have
@@ -237,7 +237,7 @@ the modeling team since we read files into R using the aws cli. That process is
 technically sharing memory from R to the system calls. I usually max this out at the amount
 of memory available.
 
-## Naviage to RStudio-Server
+# Naviage to RStudio-Server
 
 In order to actually navigate to our newly built RStudio-Server, we need to find the
 IP where the container is running. First, let's make sure our container is up and running.
@@ -271,7 +271,7 @@ http://35.161.66.147:8787/auth-sign-in
 
 Your IP address will be different.
 
-## SSH'ing into container via terminal
+# SSH'ing into container via terminal
 
 Sometimes it is important to be able to SSH into the container via the terminal.
 This is easier to do through the `docker exec` command.
@@ -290,20 +290,20 @@ root@f00fa3ff2d64:~#
 
 To exit the terminal, simply type `exit` and you will return to your local session.
 
-## Deleting containers, images, machines
+# Deleting containers, images, machines
 
 Once you are finished with the machine, you might want to clean up and shut everything down.
 This is especially true if you are using an AWS instance and paying by the hour. Not all of
 the following steps are necessary but they are shown for reference.
 
-### Delete Container
+# Delete Container
 
 ```{sh, eval=FALSE}
 docker kill rstudio_test
 docker rm rstudio_test
 ```
 
-### Delete Image
+# Delete Image
 
 ```{sh, eval=FALSE}
 docker rmi 277815483075.dkr.ecr.us-west-2.amazonaws.com/metabiota/rstudio:latest
@@ -313,7 +313,7 @@ or
 docker rmi rocker/rstudio::latest
 ```
 
-### Delete Machine
+# Delete Machine
 
 ```{sh, eval=FALSE}
 docker-machine rm -f awsRStudio
